@@ -1,0 +1,164 @@
+<div style="text-align:center">
+    <h2 class="jumbotron">WelCome {{user?.name|uppercase}} !</h2>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <h2>Products List</h2>
+      <ul class="list-group hover">
+        
+        <li class="list-group-item "
+         *ngFor="let prd of products" >
+      
+        
+         {{prd.name | uppercase}} - Price = ( {{prd.price}} )
+       <!-- Created Date: {{prd.date}} -->
+
+          
+          <!-- <button id="clicked"  (click)="showDetails(product.id)">Check Details </button> -->
+    
+          <button type="button" class="registerbtn" (click)="onItemClick(prd)">view Details</button>
+         
+        </li>
+
+      </ul>
+      
+    </div>
+
+   
+    <div class="row">
+      <div class="col-md-5">
+         
+        <h2> Price Range  </h2>
+         Enter min<input type="number" [(ngModel)]="min"   placeholder="$"><br>
+        Enter Max <input type="number" [(ngModel)]="max"   placeholder="$"><button (click)="show()">enter</button>
+        <!-- <select type="select" name="select" id="select" (click)="generateData(value)"  disabled> -->
+           <article>
+             <h2><span>Select price rang</span></h2>
+             <select (change)="selectChangeHandler($event)">
+               <option> select Rang</option>
+               <option value="100"> 0 to 99</option>
+               <option value="1000"> 100 to 999</option>
+               <option value="2000"> 1000 to 1999</option>
+               <option value="5000"> 2000 to 4999</option>
+               <option value="10000"> 5000 to 9999</option>
+             </select>
+           </article>
+        
+        <ul class="list-group hover">
+          
+          <li class="list-group-item "
+           *ngFor="let prd of filterProduct" >
+        
+          
+          {{prd.name | uppercase}} - Price =( {{prd.price}})
+          <!-- {{prd.date}} -->
+  
+            
+            <!-- <button id="clicked"  (click)="showDetails(product.id)">Check Details </button> -->
+      
+    
+           
+          </li>
+  
+        </ul>
+        
+      </div>
+
+
+
+
+
+      <div class="row">
+        <div class="col-md-8">
+           
+          <h2>New Arrivals</h2>
+          <button (click)="arrival()">check</button>
+        
+          <ul class="list-group hover">
+            
+            <li class="list-group-item "
+             *ngFor="let new of newProduct" >
+          
+            
+            {{new.name | uppercase}} - {{new.price}}
+            <!-- {{new.date}} -->
+    
+              
+              <!-- <button id="clicked"  (click)="showDetails(product.id)">Check Details </button> -->
+        
+      
+             
+            </li>
+    
+          </ul>
+          
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+             
+            <h2>Old</h2>
+          
+            <button (click)="old()">old</button>
+            <ul class="list-group hover">
+              
+              <li class="list-group-item "
+               *ngFor="let old of oldProduct" >
+            
+              
+              {{old.name | uppercase}} - {{old.price}}
+              <!-- {{old.date}} -->
+      
+                
+                <!-- <button id="clicked"  (click)="showDetails(product.id)">Check Details </button> -->
+          
+        
+               
+              </li>
+      
+            </ul>
+            
+          </div>
+
+
+          <!-- wrapper -->
+<div class="wrapper">
+  <h1>Bike Stock</h1>
+<span><i class="shopping-cart"></i></span>
+
+ <div class="clear"></div>
+ <!-- items -->
+ <div class="items">
+     <!-- single item -->
+     <div class="item">
+         <img src="http://img.tjskl.org.cn/pic/z2577d9d-200x200-1/pinarello_lungavita_2010_single_speed_bike.jpg" alt="item" />
+          <h2>Item 1</h2>
+
+         <p>Price: <em>$449</em>
+         </p>
+         <button class="add-to-cart" type="button">Add to cart</button>
+     </div>
+     <!--/ single item -->
+     <!-- single item -->
+     <div class="item">
+         <img src="http://img.tjskl.org.cn/pic/z2577d9d-200x200-1/pinarello_lungavita_2010_single_speed_bike.jpg" alt="item" />
+          <h2>Item 1</h2>
+
+         <p>Price: <em>$449</em>
+         </p>
+         <button class="add-to-cart" type="button">Add to cart</button>
+     </div>
+     <!--/ single item -->
+     <!-- single item -->
+     <div class="item">
+         <img src="http://img1.exportersindia.com/product_images/bc-small/dir_55/1620613/cannondale-jekyll-1-2011-mountain-bike-309779.jpg" alt="item" />
+          <h2>Item 1</h2>
+
+         <p>Price: <em>$449</em>
+         </p>
+         <button class="add-to-cart" type="button">Add to cart</button>
+     </div>
+     <!--/ single item -->
+ </div>
+ <!--/ items -->
+</div>
+<!--/ wrapper -->

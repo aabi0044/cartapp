@@ -1,0 +1,59 @@
+body, html
+		{
+			padding: 0;
+			margin: 0px;
+			font-family: verdana,sans-serif;
+		}
+		main
+		{
+			width: 100%;
+			display: inline-block;
+		}
+		.navbar
+		{
+			width: 100%;
+			background: #4568DC;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #B06AB3, #4568DC);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #B06AB3, #4568DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+border-bottom: 2px solid linear-gradient(to right, #B06AB3, #4568DC);
+	box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7);
+			margin: 0px;
+
+		}
+		.navbar > ul
+		{
+			margin: 0px;
+			padding: 0px;
+			text-align: center;
+		}
+			.navbar > ul li
+			{
+				display: inline-block;
+			}
+			.navbar > ul li a
+			{
+				text-decoration: none;
+				color: #fff;
+				width: 120px;
+				display: inline-block;
+				text-align: center;
+				padding: 20px 0;
+				font-weight: bold;
+				position: relative;
+			}
+			.navbar > ul li a::before {
+    background: #fff none repeat scroll 0 0;
+    bottom: -2px;
+    content: "";
+    height: 3px;
+    left: 0;
+    position: absolute;
+    width: 0%;
+    transition: 0.5s;
+}
+	.navbar > ul li a:hover::before
+	{
+		width: 100%;
+    }
+    

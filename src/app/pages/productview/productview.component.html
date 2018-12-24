@@ -1,0 +1,62 @@
+
+
+
+   
+
+
+    <button routerLink="/customer" type="button" class="btn_">back</button>
+    <button type="button" class="btn btn-primary" routerLink='/orders'>View Order Details</button>
+  <div class="row">
+    <div class="col-md-10">
+      <h2>Products Details</h2>
+      <ul class="list-group hover">
+            <ul *ngIf="product ">
+                    <p>{{product.id }} <br> {{product .name}}</p>
+                   
+                     <button  type="button" class="btn btn-primary" (click)="add()">add Cart</button>
+              
+     
+          </ul>
+         
+
+      </ul>
+      
+    </div>  
+    <div class="icon-container"><br>
+    <button type="button" class="btn btn-primary" routerLink='/cartpage'>cart</button>
+    <button type="button" class="btn btn-primary" routerLink='/customerorder'>orders</button>
+    <br>
+    <button type="button" class="btn btn-primary" (click)="paymentMethod()">Payment method</button>
+    <br>
+    <button type="button" class="btn btn-primary" (click)="clearCart()">Clear Cart</button>
+    <br>
+    <!-- <button class="btn btn-danger" (click)="checkout()">Check Out</button> -->
+    <button class="btn btn-danger" (click)="totalPrice()">total</button>
+   
+
+  </div>
+
+
+
+
+
+                
+<!--   
+    <div class="col-25">
+        <div class="container">
+          <h4>Cart 
+            <span class="price" style="color:black">
+              <i class="fa fa-shopping-cart"></i> 
+              
+            </span>
+          </h4>
+          <li class="ul"  *ngFor="let x of api.cart">
+          <p>{{x?.name}} <span class="price">{{x?.price}}$</span></p>
+          <button class="btn_" (click)="remove(x.id)">remove</button>
+        
+          <hr></li>
+          <p>Total <span class="price" style="color:black"><b>{{total}}</b></span></p>
+        </div>
+      </div>
+    </div>
+    -->

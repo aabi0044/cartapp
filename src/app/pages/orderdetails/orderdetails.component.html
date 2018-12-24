@@ -1,0 +1,27 @@
+
+<div class="row">
+  <div class="col-md-10">
+    <h2>Orders List</h2>
+    <ul class="list-group hover">
+      
+      <li class="list-group-item "
+       *ngFor="let prd of orders" >
+    
+     || {{prd.customerId}} || {{prd.email}} || {{prd.customerName}}-
+
+     
+     <ul class="list-group-item" *ngFor="let i of prd.cart"><li>
+
+       <ol >{{i.name}}=== {{i.price}}==={{i.description}}</ol></li>
+     </ul>
+     Total Price:     {{prd.amount}}
+        
+        <!-- <button id="clicked"  (click)="showDetails(product.id)">Check Details </button> -->
+  
+        
+       
+      </li>
+
+    </ul>
+    
+  </div>

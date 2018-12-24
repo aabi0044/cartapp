@@ -1,0 +1,58 @@
+<div style="text-align:center">
+  <h2 class="jumbotron">Seller DashBoard</h2>
+</div>
+<div class="row">
+  <div class="col-md-7">
+     <b> Search </b>  <input type="search">
+    <h2>Products List</h2>
+    <ul class="list-group hover" *ngFor="let product of prd">
+
+      <li class="list-group-item "   (click)="onItemClick(product)">
+
+        {{product.name | uppercase}} - {{product.price}} -{{product.description}} - <i class="fas fa-red-river">{{product.status
+          }}</i>
+          <i (click)="updateProduct(product)">Edit</i>
+      </li>
+    </ul>
+
+  </div>
+  <div class="col-md-4">
+
+    <button type="button" class="btn-btn-default"><i class="fas fa-cart-arrow-down"></i>Orders Detail</button>
+    <form #productForm="ngForm">
+      <div class="form-group">
+        <label>Name</label>
+        <input class="form-control" name="name"  [(ngModel)]="name" placeholder="Product Name"
+          required>
+      </div>
+      <div class="form-group">
+        <label>status</label>
+        <input class="form-control" name="status"  [(ngModel)]="status" placeholder="status">
+      </div>
+      <div class="form-group">
+        <label>Description</label>
+        <input class="form-control" name="Description"  [(ngModel)]="description" placeholder="Description">
+      </div>
+      <div class="form-group">
+        <label>Price</label>
+        <div class="input-group">
+          <div class="input-group-addon">
+            <i class="fa fa-dollar"></i>
+          </div>
+          <input type="number" class="form-control" name="price" [(ngModel)]="price" placeholder="Price">
+        </div>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn-btn-default" [disabled]="!productForm.valid" (click)="addProduct()"> <i class="fa fa-floppy-o"></i>
+          Submit</button>
+        <button type="button" class="btn-btn-default" (click)="deleteProduct()"><i class="fa fa-trash"></i>Delete</button>
+        <button type="button" class="btn-btn-default" (click)="resetForm(productForm)"><i class="fa fa-repeat"></i>Reset</button>
+        <button type="button" class="btn-btn-default" (click)="updateProduct()"><i class="fas fa-pen"></i>Update</button>
+
+
+      </div>
+
+
+    </form>
+  </div>
+</div>

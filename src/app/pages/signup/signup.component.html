@@ -1,0 +1,35 @@
+<h2>Login Form</h2>
+
+
+
+  <div class="container">
+    <label for=""><b>Name</b></label>
+    <input type="text" [(ngModel)]="user.name" placeholder="Enter Username" name=""  required>
+  
+
+   
+      <label for=""><b>Email</b></label>
+      <input type="email" [(ngModel)]="user.email" placeholder="Enter Username" name=""  required>
+      <br>
+    <label for="psw"><b>Password</b></label>
+    <input type="password" [(ngModel)]="user.password" placeholder="Enter Password" name=""  required>
+    <label for="psw"><b>Type</b></label>
+    <select  calss="container" [(ngModel)]="user.type">
+      <option>Customer</option>
+      <option>Seller</option>
+     </select>
+    
+    <button type="submit" (click)="signup()">SignUp</button>
+   <small class="errtxt" *ngIf="err">{{err.message}}</small>
+    <!-- <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label> -->
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="registerbtn"(click)="router.navigate(['/login']);" >Log In</button>
+    <!-- <span class="psw">Forgot <a href="#">password?</a></span> -->
+  </div>
+
+
+
